@@ -1,0 +1,13 @@
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff6600;
+}
+
+a:visited {
+    color: #800080; /* roxo para links visitados */
+}

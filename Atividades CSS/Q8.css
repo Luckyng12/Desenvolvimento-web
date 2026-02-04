@@ -1,0 +1,27 @@
+/* Layout flexbox */
+#container-flex {
+    display: flex; /* ativa flexbox */
+    flex-direction: row; /* itens em linha */
+    align-items: center; /* centraliza verticalmente */
+    justify-content: space-between; /* distribui espaço entre itens */
+    gap: 20px;
+    min-height: 200px;
+    background-color: #632323;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#container-flex > * {
+    flex: 1; /* itens encolhem proporcionalmente */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #7a1c1c;
+    text-align: center;
+    min-width: 100px;
+}
+
+#container-flex > *:hover {
+    background-color: #e6e6e6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

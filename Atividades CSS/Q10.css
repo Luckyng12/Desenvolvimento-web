@@ -1,0 +1,21 @@
+/* Estilos mínimos para o botão com classe .bin */
+.bin {
+	background-color: #4CAF50; /* cor de fundo */
+	color: #ffffff; /* cor do texto */
+	padding: 10px 18px; /* padding */
+	border-radius: 8px; /* bordas arredondadas */
+	border: none;
+	cursor: pointer; /* cursor pointer */
+	font-size: 16px;
+	transition: background-color 0.18s ease, transform 0.08s ease;
+}
+
+.bin:hover {
+	background-color: #3e8e41; /* alteração de cor no hover */
+	transform: translateY(-1px);
+}
+
+.bin:active {
+	transform: translateY(0);
+}
+

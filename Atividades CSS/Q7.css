@@ -1,0 +1,31 @@
+/* Estilo para a tabela */
+#tabela-dados {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid #333; /* borda externa */
+}
+
+#tabela-dados th {
+    background-color: #003366; /* azul escuro para cabeçalho */
+    color: #ffffff; /* texto branco */
+    padding: 12px;
+    border: 1px solid #333; /* borda interna */
+    text-align: left;
+}
+
+#tabela-dados td {
+    padding: 10px;
+    border: 1px solid #ddd; /* borda interna cinza claro */
+}
+
+#tabela-dados tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* cinza claro para linhas pares */
+}
+
+#tabela-dados tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* branco para linhas ímpares */
+}
+
+#tabela-dados tbody tr:hover {
+    background-color: #e6e6e6; /* destaque ao passar o mouse */
+}
