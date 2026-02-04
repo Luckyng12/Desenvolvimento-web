@@ -1,0 +1,40 @@
+	<!DOCTYPE html>
+	<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Conversão de Temperatura</title>
+	</head>
+	<body>
+		<h1>Conversão de Temperatura</h1>
+
+		<script>
+			// Ler temperatura do usuário
+			const input = prompt('Digite a temperatura (apenas o número):');
+			const temp = parseFloat(input);
+
+			if (isNaN(temp)) {
+				alert('Valor inválido: informe um número.');
+			} else {
+				// Ler tipo de conversão desejada: alvo 'C' ou 'F'
+				const target = prompt("Converter para qual unidade? Digite 'C' para Celsius ou 'F' para Fahrenheit:").trim().toUpperCase();
+
+				if (target === 'C') {
+					// Converter de Fahrenheit para Celsius
+					const celsius = (temp - 32) * 5 / 9;
+					const result = celsius.toFixed(2);
+					alert(`Resultado: ${result} °C`);
+					console.log(`Entrada: ${temp} °F -> Resultado: ${result} °C`);
+				} else if (target === 'F') {
+					// Converter de Celsius para Fahrenheit
+					const fahrenheit = (temp * 9 / 5) + 32;
+					const result = fahrenheit.toFixed(2);
+					alert(`Resultado: ${result} °F`);
+					console.log(`Entrada: ${temp} °C -> Resultado: ${result} °F`);
+				} else {
+					alert("Opção inválida. Digite 'C' ou 'F'.");
+				}
+			}
+		</script>
+	</body>
+	</html>
