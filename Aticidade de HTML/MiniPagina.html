@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lucas Esportes</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f0f0f0;
+                line-height: 1.6;
+
+            }
+
+            /* CABEÇALHO */
+            header {
+                background-color: #ffffff;
+                color: rgb(0, 0, 0);
+                padding: 20px 0;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                background-image: url(/imagem/Esportes\ na\ BNCC\ Educação\ Física\ _\ Dicas\ Educação\ Física.jpg);
+                
+            }
+
+            .header-container {
+                border: 0;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20 px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 8px;
+            }
+
+            .logo {
+                font-size: 50px;
+                font-weight: bold;
+                color: #000000;
+                text-decoration: none;
+            }
+
+            .logo:hover {
+                color: #ff8c5a;
+            }
+
+            /* MENU DE NAVEGAÇÃO */
+            nav {
+                background-color: #2d2d2d;
+                padding: 0;
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            nav li {
+                margin: 0;
+            }
+
+            nav a {
+                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 15px 20px;
+                transition: background-color 0.3s;
+            }
+
+            nav a:hover {
+                background-color: #ff6b35;
+                color: white;
+            }
+
+            /* CONTAINER PRINCIPAL */
+            .container {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 0 20px;
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 20px;
+            }
+
+            /* ARTIGOS */
+            .articles {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            article {
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            article:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+
+            .article-image {
+                width: 100%;
+                height: 250px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .article-content {
+                padding: 20px;
+            }
+
+            .article-content h2 {
+                color: #1a1a1a;
+                margin-bottom: 10px;
+                font-size: 24px;
+            }
+
+            .article-date {
+                color: #666;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            .article-content p {
+                color: #333;
+                margin-bottom: 15px;
+                text-align: justify;
+            }
+
+            .read-more {
+                display: inline-block;
+                color: #ff6b35;
+                text-decoration: none;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+            .read-more:hover {
+                color: #ff8c5a;
+            }
+
+            /* BARRA LATERAL */
+            aside {
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                height: fit-content;
+            }
+
+            aside h3 {
+                color: #1a1a1a;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+                border-bottom: 3px solid #ff6b35;
+            }
+
+            .sidebar-item {
+                padding: 12px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .sidebar-item:last-child {
+                border-bottom: none;
+            }
+
+            .sidebar-item a {
+                color: #667eea;
+                text-decoration: none;
+                font-size: 14px;
+                transition: color 0.3s;
+            }
+
+            .sidebar-item a:hover {
+                color: #ff6b35;
+                text-decoration: underline;
+            }
+
+            /* RODAPÉ */
+            footer {
+                background-color: #1a1a1a;
+                color: white;
+                text-align: center;
+                padding: 30px 20px;
+                margin-top: 30px;
+            }
+
+            .footer-content {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .footer-content p {
+                margin: 10px 0;
+                font-size: 14px;
+            }
+
+            .footer-links {
+                margin: 15px 0;
+            }
+
+            .footer-links a {
+                color: #ff6b35;
+                text-decoration: none;
+                margin: 0 15px;
+                transition: color 0.3s;
+            }
+
+            .footer-links a:hover {
+                color: #ff8c5a;
+            }
+
+            /* RESPONSIVIDADE */
+            @media (max-width: 768px) {
+                .container {
+                    grid-template-columns: 1fr;
+                }
+
+                nav ul {
+                    flex-direction: column;
+                }
+
+                nav li {
+                    width: 100%;
+                }
+
+                .articles {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!-- CABEÇALHO COM LOGOTIPO -->
+        <header>
+                            <a href="#" class="logo"><img src="/imagem/Logotipo pagina.png" width="200" height="200"> Lucas Esportes</a>
+            <div class="header-container">
+                <h1 style="font-size: 16px; font-weight: normal;">Seu portal de notícias sobre esportes</h1>
+            </div>
+        </header>
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#futebol">Futebol</a></li>
+                <li><a href="#basquete">Basquete</a></li>
+                <li><a href="#tenis">Tênis</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <!-- CONTAINER PRINCIPAL -->
+        <div class="container">
+            <!-- ARTIGOS -->
+            <main class="articles">
+                <!-- ARTIGO 1 -->
+                <article>
+                    <div class="article-image"> <img src="https://flamengorj-wordpress-media-uploads.nyc3.cdn.digitaloceanspaces.com/2025/11/bruno-henrique-salva-o-flamengo-nos-acrescimos-e-deixa-titulo-a-um-passo-vitoria-no-maracana-basta-1536x864.jpg" width="500" height="250"></div>
+
+                    <div class="article-content">
+                        <h2>Brasileirão: Bruno Henrique salva o Flamengo nos acréscimos e deixa título a um passo: vitória no Maracanã basta</h2>
+                        <p class="article-date">📅 26/11/2025</p>
+                        <p>Bruno Henrique salvou o Flamengo nos acréscimos e garantiu o empate por 1 a 1 contra o Atlético-MG na Arena MRV, mantendo a equipe de Filipe Luís na liderança do Brasileirão. Com o ponto somado, o Mengão abriu cinco pontos de vantagem e passa a depender apenas de uma vitória sobre o Ceará, no Maracanã, no dia 3, para confirmar o título do Brasileirão 2025.</p>
+                        <a href="#" class="read-more"><a href="https://www.flamengorj.com.br/noticia/bruno-henrique-salva-o-flamengo-nos-acrescimos-e-deixa-titulo-a-um-passo-vitoria-no-maracana-basta/"> Ler mais →</a>
+                    </div>
+                </article>
+
+                <!-- ARTIGO 2 -->
+                <article>
+                    <div class="article-image"><img src="https://s2-ge.glbimg.com/ZnRSbynO__F6Z1CN9TNIB1RpcIs=/0x0:4000x3033/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2023/v/i/nd1eWjSu2iiQKAbek6Yg/12a4827.jpg" width="500" height="250"></div>
+                    <div class="article-content">
+                        <h2>Do quase golaço ao recorde, Neymar faz de tudo em recital no retorno à Seleção</h2>
+                        <p class="article-date">📅 27 de Janeiro de 2026</p>
+                        <p>Neymar fez do gramado do Mangueirão um grande salão de festas em seu retorno à seleção brasileira.
+
+Com uma liberdade rara no futebol atual dada por Fernando Diniz, o craque fez de tudo no 5 a 1 sobre a Bolívia: gols, quase golaço, assistência, bola no travessão, dribles de efeito, empurra-empurra e recebeu um cartão amarelo. Protagonismo absoluto emoldurado pelo recorde que o transformou no maior artilheiro da equipe nacional.</p>
+                        <a href="#" class="read-more"><a href="https://ge.globo.com/futebol/selecao-brasileira/noticia/2023/09/09/do-quase-golaco-ao-recorde-neymar-faz-de-tudo-em-recital-no-retorno-a-selecao.ghtml"> Ler mais →</a>
+                    </div>
+                </article>
+
+                <!-- ARTIGO 3 -->
+                <article>
+                    <div class="article-image"><img src="https://s2-ge.glbimg.com/y0dTv_jLqFf3ZMH7fU5mzSWrwMU=/0x0:4613x3075/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2025/T/8/QYlUgKQMiq92V6y6iXwQ/gettyimages-2222967875.jpg" width="500" height="250"></div>
+                    <div class="article-content">
+                        <h2>João Fonseca bate americano Brooksby e vira mais novo a ir à 3ª rodada de Wimbledon em 14 anos</h2>
+                        <p class="article-date">📅 02/07/2025</p>
+                        <p>João Fonseca segue chamando a atenção nas quadras pelo mundo com a mistura de grande talento e precocidade. Nesta quarta-feira, o brasileiro de 18 anos venceu o americano Jenson Brooksby por 3 sets a 1, com parciais de 6/4, 5/7, 6/2 e 6/4, em 3h13min, e avançou à terceira rodada de Wimbledon, virando o mais jovem tenista a atingir tal fase da chave masculina do Grand Slam inglês desde 2011. Na ocasião, o alemão Bernard Tomic, então com 18 anos e oito meses, dois a menos do que João, acabou parando só nas quartas de final da tradicional competição disputada na grama.</p>
+                        <a href="#" class="read-more"><a href="https://ge.globo.com/tenis/noticia/2025/07/02/joao-fonseca-bate-americano-brooksby-e-vira-mais-novo-a-ir-a-3a-rodada-de-wimbledon-em-14-anos.ghtml">Ler mais →</a>
+                    </div>
+                </article>
+            </main>
+
+            <!-- BARRA LATERAL -->
+            <aside>
+                <h3> Destaques do Esporte</h3>
+                
+                <div class="sidebar-item">
+                    <a href="#">Flamengo lidera Brasileirão com 100% de aproveitamento</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="#">Seleção Feminina se prepara para Copa do Mundo</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="#">Vinicius Jr. eleito melhor jogador do ano</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="#">Atleta brasileiro quebra recorde em natação</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="#">Classificação das Olimpíadas 2026 divulgada</a>
+                </div>
+
+                <h3 style="margin-top: 25px;">🏆 Esportes</h3>
+
+                <div class="sidebar-item">
+                    <a href="#">Futebol</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="#">Basquete</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="#">Tênis</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="#">Natação</a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="#">Atletismo</a>
+                </div>
+            </aside>
+        </div>
+
+        <!-- RODAPÉ -->
+        <footer>
+            <div class="footer-content">
+                <p><strong>© 2026 Lucas Esportes - Todos os Direitos reservados</strong></p>
+                <div class="footer-links">
+                    <a href="#">Sobre Nós</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Contato</a>
+                </div>
+                <p>Desenvolvido com amor para trazer as melhores notícias de esportes para você</p>
+            </div>
+        </footer>
+    </body>
+</html>
