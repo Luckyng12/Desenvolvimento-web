@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de N° Primo</title>
+</head>
+<body>
+  <h1>Verificador de Número Primo</h1>
+
+  <script>
+    const input = prompt('Digite um número inteiro:');
+    const n = parseInt(input, 10);
+
+    if (isNaN(n)) {
+      alert('Valor inválido: informe um número inteiro.');
+    } else {
+      function isPrime(num) {
+        if (num <= 1) return false;
+        if (num <= 3) return true;
+        if (num % 2 === 0) return false;
+        const limit = Math.sqrt(num);
+        for (let i = 3; i <= limit; i += 2) {
+          if (num % i === 0) return false;
+        }
+        return true;
+      }
+
+      const primo = isPrime(n);
+      const mensagem = primo ? `O número ${n} é primo.` : `O número ${n} não é primo.`;
+      alert(mensagem);
+      console.log(mensagem);
+    }
+  </script>
+</body>
+</html>
