@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Pessoas</title>
+</head>
+<body>
+  <h1>Cadastro de Pessoas</h1>
+
+  <script>
+    alert("Informe nome e idade. Digite 'sair' ou deixe o nome vazio para encerrar.");
+
+    let maiores = 0;
+    let menores = 0;
+    const pessoas = [];
+
+    while (true) {
+      const nome = prompt('Nome:');
+      if (nome === null) break; // usuário cancelou
+      const nomeTrim = nome.trim();
+      if (nomeTrim === '' || nomeTrim.toLowerCase() === 'sair') break; // critério de parada
+
+      const idadeInput = prompt(`Idade de ${nomeTrim}:`);
+      if (idadeInput === null) break; // cancelou
+      const idade = parseInt(idadeInput, 10);
+
+      if (isNaN(idade) || idade < 0) {
+        alert('Idade inválida. Tente novamente.');
+        continue; // volta ao início para novo registro
+      }
+
+      pessoas.push({ nome: nomeTrim, idade });
+      if (idade >= 18) maiores++; else menores++;
+    }
+
+    // Exibir resultados
+    const mensagem = `Total de pessoas registradas: ${pessoas.length}\nMaiores de idade (>=18): ${maiores}\nMenores de idade (<18): ${menores}`;
+    alert(mensagem);
+
+    console.log('Lista de pessoas:', pessoas);
+    console.log(mensagem);
+  </script>
+</body>
+</html>
