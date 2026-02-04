@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primos até N</title>
+</head>
+<body>
+  <h1>Primos entre 1 e N</h1>
+
+  <script>
+    const input = prompt('Digite um número inteiro N (maior ou igual a 2):');
+    const N = parseInt(input, 10);
+
+    if (isNaN(N) || N < 2) {
+      alert('Valor inválido: informe um inteiro maior ou igual a 2.');
+    } else {
+      function isPrime(num) {
+        if (num <= 1) return false;
+        if (num <= 3) return true;
+        if (num % 2 === 0) return false;
+        const limit = Math.floor(Math.sqrt(num));
+        for (let i = 3; i <= limit; i += 2) {
+          if (num % i === 0) return false;
+        }
+        return true;
+      }
+
+      const primes = [];
+      for (let i = 2; i <= N; i++) {
+        if (isPrime(i)) primes.push(i);
+      }
+
+      if (primes.length === 0) {
+        alert(`Não há números primos entre 1 e ${N}.`);
+        console.log(`Nenhum primo encontrado até ${N}.`);
+      } else {
+        alert(`Números primos entre 1 e ${N}:\n${primes.join(', ')}`);
+        console.log(`Primos até ${N}:`, primes);
+      }
+    }
+  </script>
+</body>
+</html>
